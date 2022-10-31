@@ -1,0 +1,11 @@
+.tracks-container-items {
+    width: 100%;
+    max-width: 1024px;
+    min-width: 320px;
+    margin: 2rem auto;
+    counter-reset: playlist;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    padding: 0 10px;
+}

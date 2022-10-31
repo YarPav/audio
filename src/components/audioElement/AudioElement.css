@@ -1,0 +1,34 @@
+.audioelement {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.audioelement__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 35px;
+}
+
+.audioelement::before {
+    counter-increment: playlist;
+    content: counter(playlist);
+}
+
+.audioelement__info {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+}
+
+.audioelement__info-author {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.audioelement__duration {
+    font-weight: 300;
+}

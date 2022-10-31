@@ -1,0 +1,19 @@
+{
+  "tracks": [
+    {
+      "id": 1,
+      "label": "In the end",
+      "author": "Linkin park",
+      "audio": "https://api.spotify.com/v1/tracks/6AUfiRcpnffzH1KhI121f1?market=ES",
+      "duration": "3:20"
+    },
+    {
+        "id": 2,
+        "label": "Numb",
+        "author": "Linkin park",
+        "audio": "../data/audio/Linkin Park - In The End.mp3",
+        "duration": "4:05"
+    }
+  ]
+}
+

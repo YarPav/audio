@@ -4,7 +4,7 @@ import "./Search.css";
 import {useState} from "react";
 
 
-const redirect_uri = "http://localhost:3000/";
+const redirect_uri = "https://pleasten.herokuapp.com/";
 const client_id = "7e89c942d52f409b9f5cd6d46806e9a1";
 const client_secret = "01d71798409f4f63a590fc327c77160e";
 const AUTHORIZE = "https://accounts.spotify.com/authorize";

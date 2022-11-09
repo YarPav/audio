@@ -2,6 +2,7 @@
     font-family: 'Montserrat', sans-serif;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .audioelement__wrapper {
@@ -9,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     padding-left: 35px;
 }
 

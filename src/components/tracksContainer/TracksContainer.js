@@ -7,7 +7,7 @@ import {useEffect} from "react";
 const TracksContainer = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchTracks());
+        // dispatch(fetchTracks());
     }, []);
     const data = useSelector(state => state.searchResult);
     return (

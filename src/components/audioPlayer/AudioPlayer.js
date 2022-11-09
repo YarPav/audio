@@ -6,15 +6,11 @@ import {setIsTrackPlaying} from "../app/AppSlice";
 const AudioPlayer = () => {
     const dispatch = useDispatch();
     const {isTrackPlaying, currentTrackUrl} = useSelector(state => state);
-    const [isProgressChangingByUser, setIsProgressChangingByUser] = useState(false);
     const [audioPlayerVolume, setAudioPlayerVolume] = useState(0.01);
     const [audioPlayerProgressBar, setAudioPlayerProgressBar] = useState(0);
     const [audioElement, setAudioElement] = useState(new Audio());
     useEffect(() => {
         audioElement.addEventListener('timeupdate', () => {
-            // if (isProgressChangingByUser) {
-            //     return;
-            // }
             const progressBarWidth = audioElement.currentTime * 100 / audioElement.duration;
             setAudioPlayerProgressBar(progressBarWidth);
         });
@@ -37,31 +33,10 @@ const AudioPlayer = () => {
             initialWidth =  e.currentTarget.offsetWidth;
         return offset * 100 / initialWidth;
     }
-
-    // const onProgressMouseDown = (e) => {
-    //     // isProgressChangingByUser = true;
-    //     const progress = getSongProgress(e);
-    //     // setAudioPlayerProgressBar(progress);
-    //     // e.target.addEventListener('mousemove', mouseMoveEvent);
-    // }
-    // // const mouseMoveEvent = (e) => {
-    // //     const progress = getSongProgress(e);
-    // //     setAudioPlayerProgressBar(progress);
-    // // }
-    // const onProgressMouseUp = (e) => {
-    //     console.log(e);
-    //     // isProgressChangingByUser = false;
-    //     // e.target.removeEventListener('mousemove', mouseMoveEvent);
-    //     const progress = getSongProgress(e);
-    //     audioElement.currentTime = audioElement.duration * progress / 100;
-    // }
-
     const onProgressClick = (e) => {
-        // isProgressChangingByUser = true;
         const progress = getSongProgress(e);
         setAudioPlayerProgressBar(progress);
         audioElement.currentTime = audioElement.duration * progress / 100;
-        // e.target.addEventListener('mousemove', mouseMoveEvent);
     }
 
     const onVolumeChange = (e) => {

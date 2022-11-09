@@ -9,7 +9,7 @@ const App = () => {
         <>
             <Search/>
             {searchResult && <TracksContainer/>}
-            {currentTrackUrl && <AudioPlayer/>}
+            {currentTrackUrl !== 'empty' ? <AudioPlayer/> : null}
         </>
     );
 }

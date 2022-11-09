@@ -14,7 +14,20 @@
     background-color: #2f0007;
     color: #FFFFFF;
 }
+.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    /*border-radius: 50em;*/
+    background: url("cross.png");
+    background-size: contain;
+}
 .search-input:focus {
+    transition: .25s all;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.search-input:hover {
     transition: .25s all;
     color: #000000;
     background-color: #FFFFFF;

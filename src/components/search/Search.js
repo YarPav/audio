@@ -40,30 +40,6 @@ const Search = () => {
         }
     }
 
-    // function refreshAccessToken() {
-    //     let body = "grant_type=refresh_token";
-    //     body += "&refresh_token=" + refresh_token;
-    //     body += "&client_id=" + client_id;
-    //     callAuthorizationApi(body);
-    // }
-    //
-    // function callAuthorizationApi(body){
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open("POST", TOKEN, true);
-    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    //     xhr.setRequestHeader('Authorization', 'Basic ' + btoa(client_id + ":" + client_secret));
-    //     xhr.send(body);
-    //     xhr.onload = handleAuthorizationResponse;
-    // }
-    // function handleAuthorizationResponse(){
-    //     if ( this.status == 200 ) {
-    //         var data = JSON.parse(this.responseText);
-    //         console.log(data);
-    //     }
-    // }
-    //
-    // refreshAccessToken();
-
     const getToken = async () => {
         const req = await fetch(`https://accounts.spotify.com/api/token?grant_type=refresh_token&refresh_token=${refresh_token}&client_id=${client_id}`, {
             method: "POST",
@@ -72,7 +48,6 @@ const Search = () => {
                 'Authorization': 'Basic ' + btoa(client_id + ":" + client_secret)
             }
         })
-        // console.log(await req.json());
         try {
             return await req.json();
         } catch (e) {
@@ -87,7 +62,6 @@ const Search = () => {
             return;
         }
         getData(`https://api.spotify.com/v1/search?q=${queryString}&type=track%2Cartist&market=ES&limit=10&offset=0`)
-            // .then(res => console.log(res.tracks.items))
             .then(res => dispatch(setSearchResult(res.tracks.items)))
 
     }
@@ -99,6 +73,7 @@ const Search = () => {
             <input className="search-input"
                    type="search"
                    name="search-track"
+                   placeholder="Search track or artist..."
                    value={search}
                    onChange={onSearchInputChange}
             />

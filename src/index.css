@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 body {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   margin: 20px auto;
   box-sizing: border-box;
@@ -16,6 +17,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.empty-search-message {
+  max-width: 1024px;
+  min-width: 320px;
+  padding-left: 20px;
+  margin: 50px auto;
 }
 
 

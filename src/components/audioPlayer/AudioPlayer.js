@@ -2,6 +2,8 @@ import './AudioPlayer.css';
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {setIsTrackPlaying} from "../app/AppSlice";
+import pauseImg from './static/img/pause.png';
+import playImg from './static/img/play.png';
 
 const AudioPlayer = () => {
     const dispatch = useDispatch();
@@ -47,7 +49,9 @@ const AudioPlayer = () => {
     }
     return (
         <section className="audioplayer">
-            <button className="audioplayer__playstate" onClick={onAudioStateBtnClick}></button>
+            <button className="audioplayer__playstate" onClick={onAudioStateBtnClick}>
+                <img width="20" height="20" src={isTrackPlaying ? pauseImg : playImg}/>
+            </button>
             <div className="audioplayer__progress"
                  // onMouseDown={onProgressMouseDown}
                  // onMouseUp={onProgressMouseUp}

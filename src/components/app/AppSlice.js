@@ -2,7 +2,7 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import {useHttp} from "../../hooks/http.hook";
 
 const initialState = {
-    currentTrackUrl: null,
+    currentTrackUrl: 'empty',
     currentTrackVolume: 0.01,
     isTrackPlaying: false,
     tracksLoadingStatus: 'idle',
